@@ -20,6 +20,7 @@ class StringProcessor
         for ($i = 0; $i < mb_strlen($this->str); $i++) {
             if ($i >= $start && $i <= $stop) {
                 $str .= mb_strtoupper($this->str[$i]);
+                continue;
             }
 
             $str .= $this->str[$i];
