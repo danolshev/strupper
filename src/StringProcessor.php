@@ -6,8 +6,10 @@ namespace DanOlshev\Strupper;
 
 class StringProcessor
 {
-    public function __construct(private string $str)
+    private string $str;
+    public function __construct(string $str)
     {
+        $this->str =$str;
     }
 
     public function toUpper(int $start, int $stop): string
