@@ -7,9 +7,10 @@ namespace DanOlshev\Strupper;
 class StringProcessor
 {
     private string $str;
+
     public function __construct(string $str)
     {
-        $this->str =$str;
+        $this->str = $str;
     }
 
     public function toUpper(int $start, int $stop): string
@@ -18,16 +19,16 @@ class StringProcessor
             return $this->str;
         }
 
-        $str = '';
+        $result = '';
         for ($i = 0; $i < mb_strlen($this->str); $i++) {
             if ($i >= $start && $i <= $stop) {
-                $str .= mb_strtoupper($this->str[$i]);
+                $result .= mb_strtoupper($this->str[$i]);
                 continue;
             }
 
-            $str .= $this->str[$i];
+            $result .= $this->str[$i];
         }
 
-        return $str;
+        return $result;
     }
 }
